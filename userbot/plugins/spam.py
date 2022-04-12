@@ -9,19 +9,26 @@ from userbot.helpers.PyroHelpers import ReplyCheck
 async def spam(_, message: Message):
     # Get current chat and spam to there.
     # if in group and replied to user, then spam replying to user.
-    await message.delete()
-
+    
+    if len(message.command) <= 1:
+        await message.edit_text("Serve TEMPO - INTERVALLLO - MESSAGGIO DA INVIARE")
+        await message.delete()
+    
     times = message.command[1]
-    to_spam = " ".join(message.command[2:])
+    interval = message.command[2]
+    to_spam = " ".join(message.command[3:])
+    
+    if not isnumeric(interval):
+        return
 
     if message.chat.type in ["supergroup", "group"]:
         for _ in range(int(times)):
             await UserBot.send_message(
                 message.chat.id, to_spam, reply_to_message_id=ReplyCheck(message)
             )
-            await asyncio.sleep(0.20)
+            await asyncio.sleep(int(interval))
 
     if message.chat.type == "private":
         for _ in range(int(times)):
             await UserBot.send_message(message.chat.id, to_spam)
-            await asyncio.sleep(0.20)
+            await asyncio.sleep(int(interval))
