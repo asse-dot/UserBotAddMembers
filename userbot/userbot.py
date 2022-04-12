@@ -20,8 +20,8 @@ class UserBot(Client):
 
         super().__init__(
             name,
-            api_id = 'API ID',
-            api_hash=  'API HASH',
+            api_id = '15073774',
+            api_hash=  'f0d9876395c19d51bbd0da0ac86d71f0',
             config_file=config_file,
             plugins=dict(root=f"{name}/plugins"),
             workdir="./",

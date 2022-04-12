@@ -33,7 +33,7 @@ async def collect_afk_messages(_, message: Message):
 
         if GetChatID(message) not in CHAT_TYPE:
             text = (
-                f"`Beep boop. This is an automated message.\n"
+                f"`Ciao.\n"
                 f"I am not available right now.\n"
                 f"Last seen: {last_seen}\n"
                 f"Reason: ```{AFK_REASON.upper()}```\n"
@@ -104,7 +104,7 @@ async def afk_unset(_, message: Message):
     if AFK:
         last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
         await message.edit(
-            f"`While you were away (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
+            f"`While you were coglione (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
             f"messages from {len(USERS) + len(GROUPS)} chats`"
         )
         AFK = False
@@ -124,7 +124,7 @@ async def auto_afk_unset(_, message: Message):
     if AFK:
         last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
         reply = await message.reply(
-            f"`While you were away (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
+            f"`While sto cazzo (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
             f"messages from {len(USERS) + len(GROUPS)} chats`"
         )
         AFK = False
