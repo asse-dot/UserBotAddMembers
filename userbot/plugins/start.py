@@ -47,7 +47,7 @@ async def send_private_message(_, message: Message):
     await UserBot.delete_messages(message.chat.id, message.message_id)
     async for member in UserBot.iter_chat_members(message.chat.id):
         try:
-            await UserBot.send_message(member.user.id, "Vuoi joinare in un gruppo bello?")
+            await UserBot.send_message(member.user.id, "Gruppo che parla di scienza, tecnologia e ingegnere. Se vuoi entrare: @TecnologiaPUBIT?")
             await asyncio.sleep(2)
         except Exception as e:
             print(str(e))
