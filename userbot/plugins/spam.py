@@ -14,12 +14,13 @@ async def spam(_, message: Message):
         await message.edit_text("Serve TEMPO - INTERVALLLO - MESSAGGIO DA INVIARE")
         await asyncio.sleep(3)
         await message.delete()
+        return
     
     times = message.command[1]
     interval = message.command[2]
     to_spam = " ".join(message.command[3:])
     
-    if not isnumeric(interval):
+    if not interval.isnumeric() and not times.isnumeric():
         return
 
     if message.chat.type in ["supergroup", "group"]:
