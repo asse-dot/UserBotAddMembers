@@ -12,6 +12,7 @@ async def spam(_, message: Message):
     
     if len(message.command) <= 1:
         await message.edit_text("Serve TEMPO - INTERVALLLO - MESSAGGIO DA INVIARE")
+        await asyncio.sleep(3)
         await message.delete()
     
     times = message.command[1]
