@@ -34,10 +34,10 @@ async def collect_afk_messages(_, message: Message):
         if GetChatID(message) not in CHAT_TYPE:
             text = (
                 f"`Ciao.\n"
-                f"I am not available right now.\n"
-                f"Last seen: {last_seen}\n"
-                f"Reason: ```{AFK_REASON.upper()}```\n"
-                f"See you after I'm done doing whatever I'm doing.`"
+                f"Nn sono disponibile ora.\n"
+                f"Ultimo accesso: {last_seen}\n"
+                f"Motivo rp: ```{AFK_REASON.upper()}```\n"
+                f"A dopo.`"
             )
             await UserBot.send_message(
                 chat_id=GetChatID(message),
@@ -49,11 +49,11 @@ async def collect_afk_messages(_, message: Message):
         elif GetChatID(message) in CHAT_TYPE:
             if CHAT_TYPE[GetChatID(message)] == 10:
                 text = (
-                    f"`This is an automated message\n"
-                    f"Last seen: {last_seen}\n"
-                    f"This is the 10th time I've told you I'm AFK right now..\n"
-                    f"I'll get to you when I get to you.\n"
-                    f"No more auto messages for you`"
+                    f"`Questo e un messaggio automatico\n"
+                    f"Ultimo accesso: {last_seen}\n"
+                    f"SONO AFK PORCODIO.\n"
+                    f"BASTA.\n"
+                    f"NN PIU MESSAGGI AUTOMATICI`"
                 )
                 await UserBot.send_message(
                     chat_id=GetChatID(message),
@@ -64,10 +64,10 @@ async def collect_afk_messages(_, message: Message):
                 return
             elif CHAT_TYPE[GetChatID(message)] % 5 == 0:
                 text = (
-                    f"`Hey I'm still not back yet.\n"
-                    f"Last seen: {last_seen}\n"
-                    f"Still busy: ```{AFK_REASON.upper()}```\n"
-                    f"Try pinging a bit later.`"
+                    f"`Non sono ancora tornato.\n"
+                    f"Ultimo accesso: {last_seen}\n"
+                    f"Ancora occupato he restingo: ```{AFK_REASON.upper()}```\n"
+                    f"Prova dopo coglione.`"
                 )
                 await UserBot.send_message(
                     chat_id=GetChatID(message),
@@ -124,8 +124,8 @@ async def auto_afk_unset(_, message: Message):
     if AFK:
         last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
         reply = await message.reply(
-            f"`While sto cazzo (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
-            f"messages from {len(USERS) + len(GROUPS)} chats`"
+            f"`Mentre sei stato afk per (per {last_seen}), hai ricevuto {sum(USERS.values()) + sum(GROUPS.values())} "
+            f"messaggi da {len(USERS) + len(GROUPS)} chats`"
         )
         AFK = False
         AFK_TIME = ""
