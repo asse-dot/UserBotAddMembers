@@ -1,2 +1,4 @@
 pyrogram
 TgCrypto
+humanize
+youtube-dl

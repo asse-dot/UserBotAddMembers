@@ -14,14 +14,14 @@ class UserBot(Client):
         self.bio = None
         self.version = version
         self.name = name = self.__class__.__name__.lower()
-        config_file = f"{name}.ini"
+        config_file = 'config.ini'
 
         self.config = ConfigParser().read(config_file)
 
         super().__init__(
             name,
-            api_id = 'HERE API ID COME STRINGA',
-            api_hash=  'HERE API HASH COME STRINGA',
+            api_id = 'API ID',
+            api_hash=  'API HASH',
             config_file=config_file,
             plugins=dict(root=f"{name}/plugins"),
             workdir="./",
