@@ -28,7 +28,7 @@ async def spam(_, message: Message):
     RUN = True
     if message.chat.type in ["supergroup", "group"]:
         for _ in range(int(times)):
-           if not RUN:
+            if not RUN:
                 break
                 
             await UserBot.send_message(
