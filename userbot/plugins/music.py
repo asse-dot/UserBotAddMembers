@@ -34,7 +34,6 @@ async def send_music(_, message: Message):
                 chat_id="me",
                 query_id=song_results.query_id,
                 result_id=song_results.results[0].id,
-                hide_via=True,
             )
 
             # forward as a new message from Saved Messages
