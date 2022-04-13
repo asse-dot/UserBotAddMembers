@@ -1,4 +1,6 @@
-pyrogram
+pyrogram~=1.4.15
 TgCrypto
-humanize
+humanize~=4.0.0
 youtube-dl
+opencv-python~=4.5.5.64
+django-qrcode~=0.3

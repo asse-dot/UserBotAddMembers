@@ -49,11 +49,11 @@ async def collect_afk_messages(_, message: Message):
         elif GetChatID(message) in CHAT_TYPE:
             if CHAT_TYPE[GetChatID(message)] == 10:
                 text = (
-                    f"`Questo e un messaggio automatico\n"
-                    f"Ultimo accesso: {last_seen}\n"
-                    f"SONO AFK PORCODIO.\n"
-                    f"BASTA.\n"
-                    f"NN PIU MESSAGGI AUTOMATICI`"
+                    f"`CUESTA HE LA SEGRETERIA DI HE RESTINGO\n"
+                    f"Pocco dio o quit tg nn vengo on da {last_seen}\n"
+                    f"ADDIO.\n"
+                    f"QUITTO TG.\n"
+                    f"NN SPAMMARMI PLEASE`"
                 )
                 await UserBot.send_message(
                     chat_id=GetChatID(message),
@@ -64,10 +64,10 @@ async def collect_afk_messages(_, message: Message):
                 return
             elif CHAT_TYPE[GetChatID(message)] % 5 == 0:
                 text = (
-                    f"`Non sono ancora tornato.\n"
-                    f"Ultimo accesso: {last_seen}\n"
-                    f"Ancora occupato he restingo: ```{AFK_REASON.upper()}```\n"
-                    f"Prova dopo coglione.`"
+                    f"`A scemo nn so ancora tornato.\n"
+                    f"Sto thyardando su coralmc, nn rientro da {last_seen}\n"
+                    f"He lol xd he restingo : ```{AFK_REASON.upper()}```\n"
+                    f"Ci verimm he lokitobaby .`"
                 )
                 await UserBot.send_message(
                     chat_id=GetChatID(message),
@@ -104,8 +104,8 @@ async def afk_unset(_, message: Message):
     if AFK:
         last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
         await message.edit(
-            f"`While you were coglione (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
-            f"messages from {len(USERS) + len(GROUPS)} chats`"
+            f"`Mentre ti stavi segando su martina dell`anna e sei durato (for {last_seen}), hai ricevuto {sum(USERS.values()) + sum(GROUPS.values())} "
+            f"messaggi da quei coglioni di  {len(USERS) + len(GROUPS)} chats`"
         )
         AFK = False
         AFK_TIME = ""
@@ -124,7 +124,7 @@ async def auto_afk_unset(_, message: Message):
     if AFK:
         last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
         reply = await message.reply(
-            f"`Mentre sei stato afk per (per {last_seen}), hai ricevuto {sum(USERS.values()) + sum(GROUPS.values())} "
+            f"`Mentre sei stato afk a segarti su Frokie dell anna (e sei durato {last_seen}), hai ricevuto {sum(USERS.values()) + sum(GROUPS.values())} "
             f"messaggi da {len(USERS) + len(GROUPS)} chats`"
         )
         AFK = False
