@@ -30,6 +30,8 @@ async def add_channel(_, message: Message):
             await asyncio.sleep(12)
         except Exception as e:
             print(e)
+            await asyncio.sleep(3.5)
+
 
 @UserBot.on_message(filters.me & filters.command('add_g', '.'))
 async def add_group(_, message: Message):
